@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>miakoda.me</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; min-height: 100%; background: #050505; font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Arial, sans-serif; color: #fff; }
+    body { display: flex; justify-content: center; }
+    .page { width: 100%; max-width: 480px; min-height: 100vh; background: #050505; overflow: hidden; }
+    .hero { position: relative; height: 355px; background-image: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.12) 48%, #050505 100%), url("assets/hero.jpg"); background-size: cover; background-position: center top; }
+    .profile-block { position: relative; margin-top: -66px; padding: 0 20px; text-align: center; z-index: 2; }
+    .avatar-wrap { width: 78px; height: 78px; margin: 0 auto 12px; border-radius: 50%; padding: 3px; background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.18)); box-shadow: 0 8px 28px rgba(0,0,0,0.55); }
+    .avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 2px solid #080808; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; line-height: 1.05; font-weight: 500; letter-spacing: -0.4px; margin-bottom: 7px; }
+    .username { font-size: 14px; color: rgba(255,255,255,0.58); margin-bottom: 12px; }
+    .bio { font-size: 14px; color: rgba(255,255,255,0.78); margin-bottom: 34px; }
+    .cards { display: flex; flex-direction: column; gap: 28px; padding: 0 14px 42px; }
+    .card { position: relative; display: block; width: 100%; height: 218px; overflow: hidden; border-radius: 13px; text-decoration: none; color: #fff; background: #151515; box-shadow: 0 14px 42px rgba(0,0,0,0.36); transform: translateZ(0); }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.96) contrast(1.02); transition: transform 0.25s ease; }
+    .card:hover img { transform: scale(1.018); }
+    .card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.10) 44%, rgba(0,0,0,0.62) 100%); pointer-events: none; }
+    .card-content { position: absolute; left: 22px; right: 18px; bottom: 17px; z-index: 1; text-align: left; }
+    .card-title { font-size: 18px; line-height: 1.15; font-weight: 800; letter-spacing: -0.25px; text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
+    .card-subtitle { margin-top: 6px; font-size: 13px; color: rgba(255,255,255,0.76); text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
+    .arrow { display: flex; justify-content: center; align-items: center; height: 48px; margin-top: -8px; color: #ff77b7; font-size: 34px; line-height: 1; animation: bounce 1.55s ease-in-out infinite; }
+    .offer-row { display: flex; justify-content: center; align-items: center; gap: 14px; margin: -2px 0 -2px; font-size: 13px; color: rgba(255,255,255,0.32); }
+    .timer { color: #ff70bc; font-weight: 800; font-size: 14px; letter-spacing: 0.2px; }
+    .badge { position: absolute; top: 11px; right: 12px; z-index: 2; padding: 7px 12px; border-radius: 999px; background: linear-gradient(135deg, #f76aa9, #e958b5); color: #fff; font-size: 11px; line-height: 1; font-weight: 900; letter-spacing: 0.2px; box-shadow: 0 8px 22px rgba(255,105,180,0.28); }
+    .footer { padding: 0 0 34px; text-align: center; color: rgba(255,255,255,0.22); font-size: 12px; letter-spacing: 0.2px; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); opacity: 0.95; } 50% { transform: translateY(7px); opacity: 1; } }
+    @media (max-width: 420px) { .hero { height: 330px; } .profile-block { margin-top: -62px; } .cards { padding-left: 12px; padding-right: 12px; } .card { height: 204px; } h1 { font-size: 27px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Mia Koda cover photo"></section>
+    <section class="profile-block">
+      <div class="avatar-wrap"><img class="avatar" src="assets/avatar.png" alt="Mia Koda avatar" /></div>
+      <h1>✨ Mia Koda ✨</h1>
+      <div class="username">@itsmiakoda</div>
+      <div class="bio">Heyy, I'm Mia &lt;3</div>
+    </section>
+    <section class="cards">
+      <a class="card" href="https://www.fanvue.com/itsmiakoda/fv-1" target="_blank" rel="noopener noreferrer" aria-label="Message Mia Koda privately">
+        <img src="assets/message.png" alt="Private message preview" />
+        <div class="card-content"><div class="card-title">💌 Message Me Privately</div><div class="card-subtitle">I reply to everyone</div></div>
+      </a>
+      <div class="arrow">↓</div>
+      <div class="offer-row"><span>⏰ offer expires in</span><span class="timer" id="timer">23:44:38</span></div>
+      <a class="card" href="https://www.fanvue.com/itsmiakoda/fv-1" target="_blank" rel="noopener noreferrer" aria-label="Free today offer">
+        <span class="badge">🔥 FREE TODAY</span>
+        <img src="assets/ig.png" alt="Exclusive preview" />
+        <div class="card-content"><div class="card-title">👀 What IG Won't Show You</div><div class="card-subtitle">you know where to go</div></div>
+      </a>
+    </section>
+    <footer class="footer">miakoda.me</footer>
+  </main>
+  <script>
+    const timer = document.getElementById('timer');
+    let seconds = (23 * 60 * 60) + (44 * 60) + 38;
+    function pad(value) { return String(value).padStart(2, '0'); }
+    function renderTimer() { const h = Math.floor(seconds / 3600); const m = Math.floor((seconds % 3600) / 60); const s = seconds % 60; timer.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`; seconds = Math.max(0, seconds - 1); }
+    renderTimer(); setInterval(renderTimer, 1000);
+  </script>
+</body>
+</html>
